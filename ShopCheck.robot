@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Suite description
 Library  SeleniumLibrary
+Test Teardown  Close All Browsers
 *** Test Cases ***
 Shop Check
     [Tags]    DEBUG
@@ -8,4 +9,4 @@ Shop Check
     Sleep  3s
     ${HODNOTA}  Get Text  //h1[contains(text(),"PlayStation")]//span
     Should Be Equal As Strings  (1)  ${HODNOTA}
-    Close All Browsers
+    
